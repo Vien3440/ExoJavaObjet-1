@@ -5,6 +5,8 @@
  */
 package javaapplication1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vivien
@@ -14,24 +16,27 @@ public class Table extends Meuble{
     String nom;
     String couleur;
     int plateau;
-    int hauteurPlateau;
-    int pieds;
-    int hauteurPieds;
-    void deplacement() {}
+    int nbPieds;
+    
+    
    public Table(){
        nom = "IKEA";
        couleur = "rouge";
-       plateau = 1;
-       hauteurPlateau = 5;
-       pieds = 4;
-       hauteurPieds = 800;
-       System.out.println("Création d'une table " + nom + " " + couleur +"!");
+       nbPieds = 4 ;
+        int i;
+       ArrayList listePieds = new ArrayList();
+       for(i=0; i < nbPieds;i++){
+              listePieds.add(new Pied());
+         
+       }
+       
+       System.out.println("Création d'une table nom " + nom + "Couleur "+ couleur +" Nb de pieds "+ nbPieds + " Liste de Pieds" + listePieds +"!");
        
    }
 
     @Override
     void getHeight() {
-        int getHeight = this.hauteurPieds + this.hauteurPlateau; 
-        System.out.println("Hauteur = "+ getHeight + "cm !");
+        
+        System.out.println("Hauteur = x cm !");
     }
 }
